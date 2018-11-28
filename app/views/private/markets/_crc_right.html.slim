@@ -1,0 +1,35 @@
+- if current_user
+  /.crc-popup__overlay.js-deposit-popup.js-toggle-deposit-popup
+  /=render 'new_funds_deposit_modal'
+
+  /.crc-popup__overlay.js-withdraw-popup.js-toggle-withdraw-popup
+  /=render 'new_funds_withdraw_modal'
+
+  .crc-popup__overlay.js-funds-modal-popup
+  =render 'new_funds_modal'
+
+  .crc-layout__right
+    =render partial: 'menu'
+    =render partial: 'fund'
+- else
+  .crc-layout__right
+    .crc-explanation
+      p Use Crycen crypto market and unlock its features buy signing in or creating new account
+
+    #sign-in-sign-up-tabs.crc-tabs.crc-tabs--x2
+      ul.crc-tabs__items.etabs
+        li.tab.crc-tabs__item
+          a.crc-tabs__link href="#tab1" title="Login"
+            span.crc-tabs__text Login
+        li.tab.crc-tabs__item
+          a.crc-tabs__link href="#tab2" title="Register"
+            span.crc-tabs__text Register
+      div style="margin:10px;"
+        = render 'shared/flash'
+      .crc-tabs__content
+        #tab1.crc-tabs__tab.tab-block
+          = render partial: 'shared/sign_in', locals: { identity: Identity.new, require_captcha: false }
+        #tab2.crc-tabs__tab.tab-block
+          = render partial: 'shared/sign_up', locals: { identity: Identity.new }
+    #forget_pwd_form
+      = render partial: 'shared/forget_password', locals: {token: Token::ResetPassword.new}

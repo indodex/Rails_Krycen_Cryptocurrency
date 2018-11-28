@@ -1,0 +1,108 @@
+#askentry.crc-buy-sell__coll
+  .crc-buy-sell__block.crc-buy-sell__block--success
+    = form_for [market, ask_order], :remote => true do |f|
+      .crc-buy-sell__top
+        .crc-price
+          .crc-price__heading
+            | Ask
+          .crc-price__amount.crc-status--success 0,05429071
+          .crc-price__currency BTC
+          .crc-price__other-currency
+            .crc-dollar.crc-dollar--xl
+              span> ?
+              | 0.79USD
+      .crc-buy-sell__fields
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askPrice"
+              | Price
+          .crc-form__element
+            input.crc-form__control placeholder="0.10782951" value="" /
+          .crc-form__currency
+            | btc
+          .crc-form__currency-explanation
+            .crc-dollar
+              span> ?
+              | 0.79USD
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askAmount"
+              | Amount
+          .crc-form__element
+            input.crc-form__control placeholder="0.10782951" value="" /
+          .crc-form__currency
+            | doge
+          .crc-form__currency-explanation
+            .crc-dollar
+              span> ?
+              | 0.79USD
+      .crc-buy-sell__amount
+        table.crc-table.crc-table--coll-3.crc-table--buy-sell
+          tbody
+            tr
+              td
+                | Price in USD:
+                span 0.11
+              td
+                | Total:
+                span 12.210
+              td
+                | Total in USD:
+                span 56.210
+      .crc-buy-sell__submit
+        button.crc-button.crc-button--secondary type=""
+          span.crc-button__text Buy
+#bid_entry.crc-buy-sell__coll
+  .crc-buy-sell__block.crc-buy-sell__block--danger
+    = form_for [market, bid_order], :remote => true do |f|
+      .crc-buy-sell__top
+        .crc-price
+          .crc-price__heading
+            | Bid
+          .crc-price__amount.crc-status--danger 0,05429071
+          .crc-price__currency BTC
+          .crc-price__other-currency
+            .crc-dollar.crc-dollar--xl
+              span> ?
+              | 0.79USD
+      .crc-buy-sell__fields
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askPrice"
+              | Price
+          .crc-form__element
+            input.crc-form__control placeholder="0.10782951" value="" /
+          .crc-form__currency
+            | btc
+          .crc-form__currency-explanation
+            .crc-dollar
+              span> ?
+              | 0.79USD
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askAmount"
+              | Amount
+          .crc-form__element
+            input.crc-form__control placeholder="0.10782951" value="" /
+          .crc-form__currency
+            | doge
+          .crc-form__currency-explanation
+            .crc-dollar
+              span> ?
+              | 0.79USD
+      .crc-buy-sell__amount
+        table.crc-table.crc-table--coll-3.crc-table--buy-sell
+          tbody
+            tr
+              td
+                | Price in USD:
+                span 0.11
+              td
+                | Total:
+                span 12.210
+              td
+                | Total in USD:
+                span 56.210
+      .crc-buy-sell__submit
+        button.crc-button.crc-button--danger type=""
+          span.crc-button__text Sell

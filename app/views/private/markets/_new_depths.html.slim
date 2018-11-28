@@ -1,0 +1,20 @@
+/- if !current_user
+.crc-accordion__section-heading
+  a.crc-accordion__section-title href="#depths_wrapper" title=("Market depth graph")
+    | Market depth graph
+    span.crc-accordion__icon
+      span.fa.fa-plus
+      span.fa.fa-minus
+#depths_wrapper.panel.panel-default.crc-accordion__section-content
+  #depths
+/-else
+/  .crc-accordion__section-heading
+/    a.crc-accordion__section-title.crc-accordion__section-title--active href="#depths_wrapper" title=("Market depth graph")
+/      | Market depth graph
+/      span.crc-accordion__icon
+/        span.fa.fa-plus
+/        span.fa.fa-minus
+/  #depths_wrapper.panel.panel-default.crc-accordion__section-content.crc-accordion__section-content--open
+/    .depth-chart-wrapper
+/      .panel-body.panel-body-content.depth-chart-inner
+/        #depths

@@ -1,0 +1,19 @@
+#logged-in-screen
+  .mark-block
+    label
+      i.fa.fa-check
+  .head
+    label.title
+      |Welcome
+    label.text
+      |You have successfully logged in
+      |, click 'Market' to start trading
+  .logged-in-form
+    a.market-btn href= market_path('ltcbtc') Market
+    .row
+      .col-xs-12.text-left
+        label Having a problem?
+      .col-xs-12.text-right
+        label
+          | Click here to&nbsp
+          = link_to 'sign out', signout_path

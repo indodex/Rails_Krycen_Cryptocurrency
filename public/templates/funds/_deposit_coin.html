@@ -1,0 +1,68 @@
+<!--<section class="withdraw-instruction">-->
+  <!--<div class="row">-->
+    <!--<div class="col-sm-24 text-center">-->
+      <!--<p>{{"funds.deposit_coin.open-wallet" | t}}</p>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<hr class="split">-->
+<div class="crc-popup__form">
+    <div class="crc-form__explanation crc-form__explanation--space-top">
+        {{"funds.deposit_coin.detail" | t}}
+    </div>
+    <div class="crc-form__field crc-form__field--code">
+        <ng-include src="'/templates/funds/_address.html'"></ng-include>
+    </div>
+    <div class="crc-qrcode" onclick="$('.crc-qrcode__code').toggle();">
+        <div class="crc-qrcode__toggle" style="height: 41px;">
+            <div class="crc-qrcode__icon crc-qrcode__icon--right"><span class="fa fa-angle-down"></span></div>
+            <div class="crc-qrcode__icon crc-qrcode__icon--left"><span class="fa fa-qrcode"></span></div>
+            <div class="crc-qrcode__text">OPEN QRCODE</div>
+        </div>
+        <div class="crc-qrcode__code" style="display: block;">
+            <!--<img src="images/qrcode.jpg" alt="qrcode">-->
+            <ng-include src="'/templates/funds/_qrcode.html'"></ng-include>
+        </div>
+    </div>
+    <div class="crc-form__explanation crc-form__explanation--border-top">
+        {{"funds.deposit_coin.after_deposit" | t}}
+    </div>
+  <!--<div class="row">-->
+    <!--<div class="col-sm-24">-->
+      <!--<h4>Option 1</h4>-->
+
+      <!--<p class="clearfix">{{"funds.deposit_coin.detail" | t}}</p>-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-offset-4 col-sm-16">-->
+          <!--<ng-include src="'/templates/funds/_address.html'"></ng-include>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<hr class="split">-->
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-24">-->
+      <!--<h4>Option 2</h4>-->
+
+      <!--<p>{{"funds.deposit_coin.scan-qr" | t}}</p>-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-24 text-center">-->
+          <!--<ng-include src="'/templates/funds/_qrcode.html'"></ng-include>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<p>{{"funds.deposit_coin.scan-qr" | t}}</p>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<hr class="split">-->
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-24 text-center">-->
+      <!--<p>{{"funds.deposit_coin.after_deposit" | t}}</p>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
+
+<!--</section>-->

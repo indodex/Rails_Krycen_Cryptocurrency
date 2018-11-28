@@ -1,0 +1,39 @@
+.crc-page-center__item
+  .crc-week-status
+    header
+      ul.crc-week-status__items
+        li.crc-week-status__item.crc-week-status__item--label 7d
+        li.crc-week-status__item.crc-week-status__item--stat
+          =t('private.markets.header.change')
+          .crc-week-status__item-text.crc-status--success
+            span.change
+        li.crc-week-status__item.crc-week-status__item--stat
+          =t('volume')
+          .crc-week-status__item-text.crc-status--marked
+            span.vol
+          .crc-dollar
+            span> ?
+            span.vol-dollar
+        li.crc-week-status__item.crc-week-status__item--stat
+          =t('private.markets.header.high')
+          .crc-week-status__item-text.crc-status--marked
+            span.high
+          .crc-dollar
+            span> ?
+            span.high-dollar
+        li.crc-week-status__item.crc-week-status__item--stat
+          =t('private.markets.header.low')
+          .crc-week-status__item-text.crc-status--marked
+            span.low
+          .crc-dollar
+            span> ?
+            span.low-dollar
+        li.crc-week-status__item.crc-week-status__item--stat
+          =t('last')
+          .crc-week-status__item-text.crc-status--marked
+            span.last
+          .crc-dollar
+            span> ?
+            span.last-dollar
+      input.btc_amount-ipt type="number" value="1" id="btc_amount" maxlength="6"
+      input.usd_amount-ipt type="number" step="any" id="usd_amount" value="#{@btc_price[:avg_24h]}" placeholder="#{@btc_price[:avg_24h]}" maxlength="6"

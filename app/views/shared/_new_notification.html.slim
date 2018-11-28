@@ -1,0 +1,34 @@
+- if not @notification.nil?
+  .crc-page-center__message
+    -if @notification[:notification_color] == 'green'
+      .crc-message.crc-message--success
+        .crc-message__close
+          button.crc-button.crc-button.crc-button--transparent type=""
+            span.crc-button__icon
+              span.fa.fa-close
+        p.crc-message__text = @notification[:notification_text]
+          /- if !@notification[:link].nil? && !@notification[:link].blank?
+          /  |&nbsp;&nbsp;
+          /  a href="#{@notification[:link]}" target="_blank" = @notification[:link_text]
+
+    -if @notification[:notification_color] == 'red'
+      .crc-message.crc-message--error
+        .crc-message__close
+          button.crc-button.crc-button.crc-button--transparent type=""
+            span.crc-button__icon
+              span.fa.fa-close
+        p.crc-message__text = @notification[:notification_text]
+          /- if !@notification[:link].nil? && !@notification[:link].blank?
+          /  |&nbsp;&nbsp;
+          /  a href="#{@notification[:link]}" target="_blank" = @notification[:link_text]
+
+    -if @notification[:notification_color] == 'yellow'
+      .crc-message.crc-message--warning
+        .crc-message__close
+          button.crc-button.crc-button.crc-button--transparent type=""
+            span.crc-button__icon
+              span.fa.fa-close
+        p.crc-message__text = @notification[:notification_text]
+          /- if !@notification[:link].nil? && !@notification[:link].blank?
+          /  |&nbsp;&nbsp;
+          /  a href="#{@notification[:link]}" target="_blank" = @notification[:link_text]

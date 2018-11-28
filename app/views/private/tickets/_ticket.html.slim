@@ -1,0 +1,23 @@
+.ticket-block id="ticket_#{ticket.id}" data-ticket-id = ticket.id
+  .ticket-row.clearfix
+    .ticket-id-col = ticket.id
+    .ticket-subject-col = ticket.subject
+    .ticket-status-col.status-open = ticket.status
+    .ticket-date-col
+      = ticket.created_at.strftime('%b %d %Y')
+      |&nbsp;-&nbsp;
+      = ticket.updated_at.strftime('%b %d %Y')
+    .ticket-collapse-icon-col
+      span.fa.fa-plus
+      span.fa.fa-minus
+  .comments-block.clearfix
+    .comment-create-block
+      .comment-textarea
+        textarea.comment-body placeholder="Type your message here...  (we will respond in less than 12 hours)"
+        .attachment
+          span.fa.fa-paperclip
+          span .jpg  .png  .gif  .pdf
+      .create-comment-btn-block
+        label.custom-btn.create-comment-btn.pull-right
+          span.icon.fa.fa-paper-plane
+          span.text Create comment

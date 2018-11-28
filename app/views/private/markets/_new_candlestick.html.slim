@@ -1,0 +1,59 @@
+.crc-chart
+  .crc-chart__filter style=('height: 27px;')
+    .crc-filter
+      div#range_switch.col-md-66.crc-col-md-height-27.switch data-x='15'
+        ul.crc-filter__items data-x='15'
+          li.crc-filter__item.crc-filter__item--x3
+            a.crc-button.crc-button--bordered data-x="1" href="#"
+              span.crc-button__text 1m
+            a.crc-button.crc-button--bordered data-x="5" href="#"
+              span.crc-button__text 5m
+            a.crc-button.crc-button--bordered.crc-button--warning data-x="15" href="#"
+              span.crc-button__text 15m
+          li.crc-filter__item.crc-filter__item--x5
+            a.crc-button.crc-button--bordered data-x="60" href="#"
+              span.crc-button__text 1h
+            a.crc-button.crc-button--bordered data-x="120" href="#"
+              span.crc-button__text 2h
+            a.crc-button.crc-button--bordered data-x="240" href="#"
+              span.crc-button__text 4h
+            a.crc-button.crc-button--bordered data-x="360" href="#"
+              span.crc-button__text 6h
+            a.crc-button.crc-button--bordered data-x="720" href="#"
+              span.crc-button__text 12h
+          li.crc-filter__item.crc-filter__item--x2
+            a.crc-button.crc-button--bordered data-x="1440" href="#"
+              span.crc-button__text 1d
+            a.crc-button.crc-button--bordered data-x="4320" href="#"
+              span.crc-button__text 3d
+          li.crc-filter__item.crc-filter__item--x3
+            a.crc-button.crc-button--bordered data-x="10080" href="#"
+              span.crc-button__text 1w
+            a.crc-button.crc-button--bordered data-x="20160" href="#"
+              span.crc-button__text 2w
+            a.crc-button.crc-button--bordered data-x="30240" href="#"
+              span.crc-button__text 3w
+      #indicator_switch_wrapper.col-md-34.crc-col-md-height-27.switch
+        ul.crc-filter__items-right
+          li.crc-filter__item-right.crc-filter__item--x2-special: ul#type_switch.list-style-none.crc-filter__items data-x='close'
+            li.crc-filter__item.crc-filter__item--x2 style=("width: 100%;")
+              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="candlestick" href="#"
+                span.crc-button__text =t('chart.candlestick')
+              a.crc-button.crc-button--bordered data-x="close" href="#"
+                span.crc-button__text =t('chart.line')
+          li.crc-filter__item-right.crc-filter__item--x2: ul#main_indicator_switch.list-style-none.crc-filter__items data-x='MA'
+            li.crc-filter__item.crc-filter__item--x2 style=("width: 100%;")
+              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="MA" href="#"
+                span.crc-button__text MA
+              a.crc-button.crc-button--bordered data-x="EMA" href="#"
+                span.crc-button__text EMA
+          li.crc-filter__item-right: ul#indicator_switch.list-style-none.crc-filter__items data-x='MACD'
+            li.crc-filter__item style=("width: 100%;")
+              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="MACD" href="#"
+                span.crc-button__text MACD
+  .crc-chart__image
+    #candlestick
+      #candlestick_chart style='height: 100%; background-color: #000000; color: #cccccc; -webkit-filter: invert(100%); filter: invert(100%);'
+      .mask: table: tr: td.text-center
+        i.fa.fa-refresh.fa-spin.fa-1x
+        span Loading ...

@@ -1,0 +1,52 @@
+<div id="bitcoin-list-div" class="hide">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="bitcoin-list-close"
+          onclick="close_bitcoin_list()"><span aria-hidden="true"><i
+          class="fa fa-close"></i></span></button>
+  <div class="funds-coin-type border-class border-round-class" ng-repeat="account in accounts" bind="accounts" ng-click="accountsCtrl.deposit(account); $event.preventDefault();" onclick="javascript:close_bitcoin_list()">
+    <div class="coin-icon"><img ng-src="/icon-{{account.currency}}.png" class="coin-img"></div>
+    <div class="funds-coin-type-name">{{ account.currency | uppercase }}</div>
+  </div>
+</div>
+
+<div class="container" ng-repeat="account in accounts" bind="accounts">
+  <div class="row currency-item " ng-class="{selected: accountsCtrl.isSelected(account.currency),
+  'deposit-now': accountsCtrl.isDeposit(),
+  'withdraw-now': accountsCtrl.isWithdraw() }"
+  data-currency="{{account.currency}}">
+    <div class="bitcoin-content margin-bottom-10">
+      <div class="funds-coin-type border-class border-round-class" onclick="open_bitcoin_list();">
+        <div class="coin-icon"><img ng-src="/icon-{{account.currency}}.png" alt="" class="coin-img"></div>
+        <div class="funds-coin-type-name">{{ account.currency | uppercase }}</div>
+        <div class="funds-coin-type-more"><i class="fa fa-angle-down"></i></div>
+      </div>
+    </div>
+    <div class="bitcoin-content margin-bottom-10">
+      <div class="funds-property-labels clearfix">
+        <div class="float-left-class label-icon-padding-val">
+          <i class="fa fa-credit-card "></i>
+          <span class="label-icon-vale-padding-left">AVAILABLE</span>
+        </div>
+        <div class="float-right-class labels-content-half">
+          <div class="float-left-class">{{account.balance | round_down }}</div>
+          <div class="float-right-class">{{ account.currency | uppercase }}</div>
+        </div>
+      </div>
+      <div class="funds-property-labels clearfix">
+        <div class="float-left-class label-icon-padding-val">
+          <i class="fa fa-lock" style="margin-left: 3px; margin-right: 3px;"></i>
+          <span class="label-icon-vale-padding-left">LOCKED</span>
+        </div>
+        <div class="float-right-class labels-content-half">
+          <div class="float-left-class">{{account.locked}}</div>
+          <div class="float-right-class">{{ account.currency | uppercase }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="bitcoin-content">
+      <a href="#" class="btn deposit-tab-btn text-uppercase" ng-click="accountsCtrl.deposit(account); $event.preventDefault()" ><i class="fa fa-plus-square"></i>{{ 'funds.deposit' | t }}</a>
+      <a href="#" class="btn withdraw-tab-btn text-uppercase" ng-click="accountsCtrl.withdraw(account); $event.preventDefault()" ><i class="fa fa-minus-square"></i>{{ 'funds.withdraw' | t }}</a>
+
+    </div>
+  </div>
+
+</div>

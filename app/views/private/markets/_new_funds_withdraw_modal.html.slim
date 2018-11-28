@@ -1,0 +1,144 @@
+.crc-popup.js-withdraw-popup
+  .crc-popup__close
+    button.crc-button.crc-button--transparent.js-toggle-withdraw-popup type=""
+      span.crc-button__icon
+        span.fa.fa-close
+  .crc-popup__heading
+    | Withdraw
+  .crc-popup__content
+    .crc-popup__form
+      .crc-form__explanation.crc-form__explanation--space-top Please ﬁll in the address and amount, then submit the form. It will be conﬁrmed in 10 minutes
+      .crc-balance
+        span.crc-balance__label Balance
+        span.crc-balance__value.crc-status--success 59.549863
+      .crc-form__field
+        .crc-form__label
+          span.crc-form__label-control
+            button.crc-button.crc-button--transparent.js-manage-address type="button"
+              span.crc-button__icon
+                span.fa.fa-cog
+              span.crc-button__text Manage address
+          label for="manageAdress"
+            | Label
+        .crc-form__element
+          select#manageAdress.crc-form__control name="manageAdress"
+            option AddressName 1
+            option AddressName 2
+      .crc-form__field
+        .crc-form__label
+          span.crc-form__label-control
+            button.crc-button.crc-button--transparent.js-amount type="button"
+              span.crc-button__icon
+                span.fa.fa-rocket
+              span.crc-button__text Withdraw all
+          label for="amount"
+            | Amount
+        .crc-form__element
+          input#amount.crc-form__control placeholder=("At least 0.001") type="text" value="" /
+      .crc-form__field
+        .crc-form__label
+          span.crc-form__label-control
+            button.crc-button.crc-button--transparent.js-google-authenticator type="button"
+              span.crc-button__icon
+                span.fa.fa-info-circle
+              span.crc-button__text About fee
+          label for="googleAuthenticator"
+            | Google Authenticator
+        .crc-form__element
+          input#googleAuthenticator.crc-form__control placeholder=("6-digit password") type="text" value="" /
+        .crc-form__explanation
+          | Google Authenticator will re-generate a new password every thirty seconds, please input timely.
+      .crc-form__submit.crc-form__submit--space-top
+        button.crc-button type=""
+          span.crc-button__text Submit
+      .crc-form__explanation.crc-form__explanation--border-top Once you have completed the deposit transaction, you can check the status of your withdraws below
+    .crc-accordion
+      .crc-accordion__section
+        .crc-accordion__section-heading
+          a.crc-accordion__section-title href="#history2" title="History"
+            | History
+            span.crc-accordion__icon
+              span.fa.fa-plus
+              span.fa.fa-minus
+        #history2.crc-accordion__section-content
+          table.crc-table.crc-table--history
+            thead
+              tr
+                th Time
+                th Transaction ID
+                th Amount
+                th Conﬁrmations
+                th State/Action
+            tbody
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-spinner.crc-status--emphasized
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Rejected
+                  span.fa.fa-remove.crc-status--danger
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success

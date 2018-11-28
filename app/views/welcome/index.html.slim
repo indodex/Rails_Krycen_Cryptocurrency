@@ -1,0 +1,17 @@
+/= render partial: 'home_slider'
+/= render partial: 'market_statuses'
+.container
+  .heading-title
+    h1.heading-title-h1 CRYPTO-CENTRAL
+    h2.heading-title-h2 A Most Simplistic Safe & Secure Shiny New Crypto Currency Exchange
+  .landing-images
+    .laptop
+      img src=image_url("screen-laptop.png")
+      label.laptop Pro mode
+    .portable
+      img src=image_url("screen-portable.png")
+      label.portable Easy mode
+  - if current_user
+    = render partial: 'logged_in_screen'
+  - else
+    = render partial: 'sign_in_sign_up'

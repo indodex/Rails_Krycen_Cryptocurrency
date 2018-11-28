@@ -1,0 +1,54 @@
+/- if !current_user
+.crc-accordion__section-heading
+  a.crc-accordion__section-title href="#order_book" title=("ORDER BOOK")
+    | Order Book
+    span.crc-accordion__icon
+      span.fa.fa-plus
+      span.fa.fa-minus
+#order_book.crc-accordion__section-content
+  .grid__row
+    #order_bookask.grid__span.grid__span--md-2
+      table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side.crc-table--border-right
+        thead
+          tr
+            th.price = t('.ask')
+            th.volume = t('.volume')
+            th.amount = t('.amount')
+      .crc-overflow.crc-overflow--market-history-1
+        table.crc-table.crc-table--coll-3.crc-table--market-history-1.asks
+    #order_bookbid.grid__span.grid__span--md-2
+      table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side
+        thead
+          tr
+            th.amount = t('.amount')
+            th.volume = t('.volume')
+            th.price = t('.bid')
+      .crc-overflow.crc-overflow--market-history-1
+        table.crc-table.crc-table--coll-3.crc-table--market-history-1.bids
+/- else
+/  .crc-accordion__section-heading
+/    a.crc-accordion__section-title.crc-accordion__section-title--active href="#order_book" title=("Market history")
+/      | Market history
+/      span.crc-accordion__icon
+/        span.fa.fa-plus
+/        span.fa.fa-minus
+/  #order_book.crc-accordion__section-content.crc-accordion__section-content--open
+/    .grid__row
+/      #order_bookask.grid__span.grid__span--md-2
+/        table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side.crc-table--border-right
+/          thead
+/            tr
+/              th.price = t('.ask')
+/              th.volume = t('.volume')
+/              th.amount = t('.amount')
+/        .crc-overflow.crc-overflow--market-history-1
+/          table.crc-table.crc-table--coll-3.crc-table--market-history-1.asks
+/      #order_bookbid.grid__span.grid__span--md-2
+/        table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side
+/          thead
+/            tr
+/              th.amount = t('.amount')
+/              th.volume = t('.volume')
+/              th.price = t('.bid')
+/        .crc-overflow.crc-overflow--market-history-1
+/          table.crc-table.crc-table--coll-3.crc-table--market-history-1.bids

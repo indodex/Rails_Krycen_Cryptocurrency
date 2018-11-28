@@ -1,0 +1,2075 @@
+.crc-layout__center
+  - if current_user
+    = render partial: 'shared/new_notification'
+  = render partial: 'new_header'
+  /.crc-page-center__item
+  /  .crc-week-status
+  /    header
+  /      ul.crc-week-status__items
+  /        li.crc-week-status__item.crc-week-status__item--label 7d
+  /        li.crc-week-status__item.crc-week-status__item--stat
+  /          = t('.change')
+  /          .crc-week-status__item-text.crc-status--success
+  /            span.change
+  /        li.crc-week-status__item.crc-week-status__item--stat
+  /          | Volume
+  /          .crc-week-status__item-text.crc-status--marked
+  /            span.vol
+  /          .crc-dollar
+  /            span> ?
+  /            | 0.79USD
+  /        li.crc-week-status__item.crc-week-status__item--stat
+  /          = t('.high')
+  /          .crc-week-status__item-text.crc-status--marked
+  /            span.high
+  /          .crc-dollar
+  /            span> ?
+  /            | 0.79USD
+  /        li.crc-week-status__item.crc-week-status__item--stat
+  /          = t('.low')
+  /          .crc-week-status__item-text.crc-status--marked
+  /            span.low
+  /          .crc-dollar
+  /            span> ?
+  /            | 0.79USD
+  /        li.crc-week-status__item.crc-week-status__item--stat
+  /          | Last
+  /          .crc-week-status__item-text.crc-status--marked
+  /            | 192220.04912467
+  /          .crc-dollar
+  /            span> ?
+  /            | 0.79USD
+  .crc-page-center__item
+    = render partial: 'new_candlestick'
+    /.crc-chart
+    /  .crc-chart__filter style=('height: 27px;')
+    /    .crc-filter
+    /      div#range_switch.switch.col-md-66.crc-col-md-height-27
+    /        ul.crc-filter__items data-x='15'
+    /          li.crc-filter__item.crc-filter__item--x3
+    /            a.crc-button.crc-button--bordered data-x="1" href="#"
+    /              span.crc-button__text 1m
+    /            a.crc-button.crc-button--bordered data-x="5" href="#"
+    /              span.crc-button__text 5m
+    /            a.crc-button.crc-button--bordered.crc-button--warning data-x="15" href="#"
+    /              span.crc-button__text 15m
+    /          li.crc-filter__item.crc-filter__item--x5
+    /            a.crc-button.crc-button--bordered data-x="60" href="#"
+    /              span.crc-button__text 1h
+    /            a.crc-button.crc-button--bordered data-x="120" href="#"
+    /              span.crc-button__text 2h
+    /            a.crc-button.crc-button--bordered data-x="240" href="#"
+    /              span.crc-button__text 4h
+    /            a.crc-button.crc-button--bordered data-x="360" href="#"
+    /              span.crc-button__text 6h
+    /            a.crc-button.crc-button--bordered data-x="720" href="#"
+    /              span.crc-button__text 12h
+    /          li.crc-filter__item.crc-filter__item--x2
+    /            a.crc-button.crc-button--bordered data-x="1440" href="#"
+    /              span.crc-button__text 1d
+    /            a.crc-button.crc-button--bordered data-x="4320" href="#"
+    /              span.crc-button__text 3d
+    /          li.crc-filter__item.crc-filter__item--x3
+    /            a.crc-button.crc-button--bordered data-x="10080" href="#"
+    /              span.crc-button__text 1w
+    /            a.crc-button.crc-button--bordered data-x="20160" href="#"
+    /              span.crc-button__text 2w
+    /            a.crc-button.crc-button--bordered data-x="30240" href="#"
+    /              span.crc-button__text 3w
+    /      div#indicator_switch_wrapper.switch.col-md-34.crc-col-md-height-27
+    /        ul.crc-filter__items-right
+    /          li.crc-filter__item-right.crc-filter__item--x2-special: ul#type_switch.list-style-none.crc-filter__items
+    /            li.crc-filter__item.crc-filter__item--x2 style=("width: 100%;")
+    /              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="candlestick" href="#"
+    /                span.crc-button__text =t('chart.candlestick')
+    /              a.crc-button.crc-button--bordered data-x="close" href="#"
+    /                span.crc-button__text =t('chart.line')
+    /          li.crc-filter__item-right.crc-filter__item--x2: ul#main_indicator_switch.list-style-none.crc-filter__items
+    /            li.crc-filter__item.crc-filter__item--x2 style=("width: 100%;")
+    /              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="MA" href="#"
+    /                span.crc-button__text MA
+    /              a.crc-button.crc-button--bordered data-x="EMA" href="#"
+    /                span.crc-button__text EMA
+    /          li.crc-filter__item-right: ul#indicator_switch.list-style-none.crc-filter__items
+    /            li.crc-filter__item style=("width: 100%;")
+    /              a.crc-button.crc-button--bordered.crc-button--emphasized data-x="MACD" href="#"
+    /                span.crc-button__text MACD
+    /  .crc-chart__image
+    /    #candlestick
+    /      #candlestick_chart style='height: 100%; background-color: #000000; color: #cccccc; -webkit-filter: invert(100%);'
+    /      .mask: table: tr: td.text-center
+    /        i.fa.fa-refresh.fa-spin.fa-1x
+    /        span Loading ...
+  .crc-page-center__item
+    .crc-buy-sell
+      - if !current_user
+        .crc-buy-sell__overlay
+          .crc-buy-sell__activate
+            a href="#" title=("Sign in")  Sign in
+            .crc-buy-sell__or or
+            a href="#" title=("create account")  Create account
+      .crc-buy-sell__collumns
+        /= render partial: 'ask_entry', locals: {market: @market, order: @order_ask}
+        /= render partial: 'bid_entry', locals: {market: @market, order: @order_bid}
+        = render partial: 'new_ask_entry', locals: {market: @market, order: @order_bid}
+        = render partial: 'new_bid_entry', locals: {market: @market, order: @order_ask}
+        /.crc-buy-sell__coll
+        /  .crc-buy-sell__block.crc-buy-sell__block--success
+        /    .crc-buy-sell__top
+        /      .crc-price
+        /        .crc-price__heading
+        /          | Ask
+        /        .crc-price__amount.crc-status--success 0,05429071
+        /        .crc-price__currency BTC
+        /        .crc-price__other-currency
+        /          .crc-dollar.crc-dollar--xl
+        /            span> ?
+        /            | 0.79USD
+        /    .crc-buy-sell__fields
+        /      .crc-form__field.crc-form__field--buy-sell
+        /        .crc-form__label
+        /          label for="askPrice"
+        /            | Price
+        /        .crc-form__element
+        /          input.crc-form__control placeholder="0.10782951" value="" /
+        /        .crc-form__currency
+        /          | btc
+        /        .crc-form__currency-explanation
+        /          .crc-dollar
+        /            span> ?
+        /            | 0.79USD
+        /      .crc-form__field.crc-form__field--buy-sell
+        /        .crc-form__label
+        /          label for="askAmount"
+        /            | Amount
+        /        .crc-form__element
+        /          input.crc-form__control placeholder="0.10782951" value="" /
+        /        .crc-form__currency
+        /          | doge
+        /        .crc-form__currency-explanation
+        /          .crc-dollar
+        /            span> ?
+        /            | 0.79USD
+        /    .crc-buy-sell__amount
+        /      table.crc-table.crc-table--coll-3.crc-table--buy-sell
+        /        tbody
+        /          tr
+        /            td
+        /              | Price in USD:
+        /              span 0.11
+        /            td
+        /              | Total:
+        /              span 12.210
+        /            td
+        /              | Total in USD:
+        /              span 56.210
+        /    .crc-buy-sell__submit
+        /      button.crc-button.crc-button--secondary type=""
+        /        span.crc-button__text Buy
+        /.crc-buy-sell__coll
+        /  .crc-buy-sell__block.crc-buy-sell__block--danger
+        /    .crc-buy-sell__top
+        /      .crc-price
+        /        .crc-price__heading
+        /          | Bid
+        /        .crc-price__amount.crc-status--danger 0,05429071
+        /        .crc-price__currency BTC
+        /        .crc-price__other-currency
+        /          .crc-dollar.crc-dollar--xl
+        /            span> ?
+        /            | 0.79USD
+        /    .crc-buy-sell__fields
+        /      .crc-form__field.crc-form__field--buy-sell
+        /        .crc-form__label
+        /          label for="askPrice"
+        /            | Price
+        /        .crc-form__element
+        /          input.crc-form__control placeholder="0.10782951" value="" /
+        /        .crc-form__currency
+        /          | btc
+        /        .crc-form__currency-explanation
+        /          .crc-dollar
+        /            span> ?
+        /            | 0.79USD
+        /      .crc-form__field.crc-form__field--buy-sell
+        /        .crc-form__label
+        /          label for="askAmount"
+        /            | Amount
+        /        .crc-form__element
+        /          input.crc-form__control placeholder="0.10782951" value="" /
+        /        .crc-form__currency
+        /          | doge
+        /        .crc-form__currency-explanation
+        /          .crc-dollar
+        /            span> ?
+        /            | 0.79USD
+        /    .crc-buy-sell__amount
+        /      table.crc-table.crc-table--coll-3.crc-table--buy-sell
+        /        tbody
+        /          tr
+        /            td
+        /              | Price in USD:
+        /              span 0.11
+        /            td
+        /              | Total:
+        /              span 12.210
+        /            td
+        /              | Total in USD:
+        /              span 56.210
+        /    .crc-buy-sell__submit
+        /      button.crc-button.crc-button--danger type=""
+        /        span.crc-button__text Sell
+  .crc-page-center__item
+    .crc-accordion
+      .crc-accordion__section
+        /.crc-accordion__section-heading
+        /  a.crc-accordion__section-title href="#marketHistory1" title=("Market history")
+        /    | Market history
+        /    span.crc-accordion__icon
+        /      span.fa.fa-plus
+        /      span.fa.fa-minus
+        = render partial: 'new_order_book'
+
+        /#marketHistory1.crc-accordion__section-content
+        /  .grid__row
+        /    .grid__span.grid__span--md-2
+        /      table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side.crc-table--border-right
+        /        thead
+        /          tr
+        /            th Amount
+        /            th Volume
+        /            th.crc-status--success Ask
+        /      .crc-overflow.crc-overflow--market-history-1
+        /        table.crc-table.crc-table--coll-3.crc-table--market-history-1
+        /          tbody
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--success> 0
+        /                | \.00000100
+        /    .grid__span.grid__span--md-2
+        /      table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--scroll-side
+        /        thead
+        /          tr
+        /            th Amount
+        /            th Volume
+        /            th.crc-status--danger Ask
+        /      .crc-overflow.crc-overflow--market-history-1
+        /        table.crc-table.crc-table--coll-3.crc-table--market-history-1
+        /          tbody
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+        /            tr
+        /              td
+        /                span.crc-status--marked> 0
+        /                | \.00000100
+        /              td
+        /                span.crc-status--marked> 100000
+        /                | \.00000100
+        /              td
+        /                span.crc-status--danger> 0
+        /                | \.00000100
+  .crc-page-center__item
+    .crc-accordion
+      .crc-accordion__section
+        /.crc-accordion__section-heading
+        /  a.crc-accordion__section-title href="#marketDepthGraph" title=("Market depth graph")
+        /    | Market depth graph
+        /    span.crc-accordion__icon
+        /      span.fa.fa-plus
+        /      span.fa.fa-minus
+        = render partial: 'new_depths'
+
+        /#marketDepthGraph.crc-accordion__section-content
+        /  p Market depth graph
+  .crc-page-center__item
+    .crc-accordion
+      .crc-accordion__section
+        /.crc-accordion__section-heading
+        /  .crc-accordion__section-heading-actions
+        /    .crc-accordion__section-heading-action
+        /      button.crc-button.crc-button--over-heading
+        /        span.crc-button__text Cancel ask
+        /    .crc-accordion__section-heading-action
+        /      button.crc-button.crc-button--over-heading type=""
+        /        span.crc-button__text Cancel bid
+        /    .crc-accordion__section-heading-action
+        /      button.crc-button.crc-button--over-heading.crc-button--over-heading.crc-button--over-heading-danger type=""
+        /        span.crc-button__text Cancel all
+        /  a.crc-accordion__section-title href="#pendingOrders" title=("Pending orders")
+        /    | Pending orders
+        /    span.crc-accordion__icon
+        /      span.fa.fa-plus
+        /      span.fa.fa-minus
+        = render partial: 'new_my_others'
+
+        /#pendingOrders.crc-accordion__section-content
+        /  table.crc-table.crc-table--market-history-1.crc-table--pending-orders.crc-table--scroll-side-pending-orders
+        /    thead
+        /      tr
+        /        th Time
+        /        th Amount
+        /        th Volume
+        /        th Bid
+        /        th Ask
+        /        th &nbsp;
+        /  .crc-overflow.crc-overflow--pending-orders
+        /    table.crc-table.crc-table--market-history-1.crc-table--pending-orders
+        /      tbody
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31
+        /          td
+        /            span.crc-status--marked> 0
+        /            | \.00000100
+        /          td
+        /            span.crc-status--marked> 123456
+        /            | \.00000100
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            button.crc-button.crc-button--link.crc-button--danger-text type=""
+        /              span.crc-button__text Cancel
+  .crc-page-center__item
+    .crc-accordion
+      .crc-accordion__section
+        = render partial: 'new_market_trades'
+        /#marketHistory2.crc-accordion__section-content
+        /  table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--market-history-2.crc-table--scroll-side
+        /    thead
+        /      tr
+        /        th Time
+        /        th Price
+        /        th Volume
+        /  .crc-overflow.crc-overflow--market-history-2
+        /    table.crc-table.crc-table--coll-3.crc-table--market-history-1
+        /      tbody
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--danger> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100
+        /        tr
+        /          td.crc-status--marked
+        /            | 2016.03.22  14 : 31 : 59
+        /          td
+        /            span.crc-status--success> 0
+        /            | \.025300
+        /          td
+        /            span.crc-status--marked> 100000
+        /            | \.00000100

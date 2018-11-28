@@ -1,0 +1,44 @@
+<div class="crc-popup__form crc-address-manage__form"  ng-controller="FundSourcesController">
+  <div class="heading clearfix">
+    <div class="title-block">
+        <h5 class="title">MANAGE ADDESS</h5>
+        <h7 class="description" ng-bind="'fund_sources.manage_coin_address_desc' | t"></h7>
+    </div>
+    <div class="close-btn-block">
+        <label class="cursor-pointer close-btn" ng-click="backtowithdraws()"><span class="fa fa-times"></span>Close</label>
+    </div>
+  </div>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th ng-bind="'fund_sources.label' | t"></th>
+        <th ng-bind="'fund_sources.address' | t"></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="fs in fund_sources()">
+        <td class="col-xs-8" ng-bind="fs.extra"></td>
+        <td class="col-xs-12" ng-bind="fs.uid"></td>
+        <td class="col-xs-2 text-right default-col">
+          <input type="radio" value="fs" ng-checked="fs == defaultFundSource()" ng-click="makeDefault(fs)">
+        </td>
+        <td class="col-xs-2 text-right delete-col">
+          <a href="javascript:;" ng-click="remove(fs)"><i class="fa fa-trash-o">&nbsp;</i></a>
+        </td>
+      </tr>
+      <tr class="add-panel">
+        <td class="col-xs-8">
+          <input class="string form-control" placeholder="{{'fund_sources.label' | t}}" ng-model="extra" ng-init="extra = ''" />
+        </td>
+        <td class="col-xs-12">
+          <input class="string form-control" placeholder="{{'fund_sources.address' | t}}" ng-model="uid" ng-init="uid = ''" />
+        </td>
+        <td colspan="2" class="col-xs-4">
+          <button class="form-control" type="submit" ng-click="add()" ng-bind="'fund_sources.add' | t"></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

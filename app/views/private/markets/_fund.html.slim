@@ -1,0 +1,29 @@
+.crc-page-right__item.crc-page-right__item--funds
+  .crc-funds
+    .crc-funds__heading
+      | Funds
+    accounts
+    /.crc-funds__items
+      /- current_user.accounts.enabled.each do |account|
+        /.crc-funds__item
+        /  .crc-funds__item-controls
+        /    .crc-funds__item-control
+        /      button.crc-button.crc-button.crc-button--transparent.js-toggle-deposit-popup[type=""]
+        /        span.crc-button__icon
+        /          span.fa.fa-plus-square
+        /        /span.crc-button__icon
+        /          /a.fa.fa-plus-square href="#{funds_path}#/deposits/#{account.currency}"
+        /    .crc-funds__item-control
+        /      button.crc-button.crc-button.crc-button--transparent.js-toggle-withdraw-popup[type=""]
+        /        span.crc-button__icon
+        /          span.fa.fa-minus-square
+        /        /span.crc-button__icon
+        /          /a.fa.fa-minus-square href="#{funds_path}#/withdraws/#{account.currency}"
+        /  .crc-funds__item-currency
+        /    span.crc-funds__item-icon
+        /      img src="/icon-#{account.currency}.png" alt="#{account.currency_obj.code_text}"
+        /    = account.currency_obj.code_text
+        /  .crc-funds__item-stats
+        /    | Amount: #{account.amount}
+        /    br
+        /    | Freeze: #{account.locked}

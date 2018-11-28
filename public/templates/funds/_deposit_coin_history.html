@@ -1,0 +1,65 @@
+<!--<br />-->
+<!--<h2 class="panel-title">{{ "funds.deposit_history.title" | t }}</h2>-->
+<!--<table class="table" ng-controller="DepositHistoryController as dhCtrl">-->
+  <!--<tr>-->
+    <!--<th>{{ "funds.deposit_history.time" | t }}</th>-->
+    <!--<th>{{ "funds.deposit_history.txid" | t }}</th>-->
+    <!--<th>{{ "funds.deposit_history.amount" | t }}</th>-->
+    <!--<th>{{ "funds.deposit_history.confirmations" | t }}</th>-->
+    <!--<th>{{ "funds.deposit_history.state_and_action" | t }}</th>-->
+  <!--</tr>-->
+  <!--<tr ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }" ng-repeat="deposit in dhCtrl.deposits | orderBy:predicate">-->
+    <!--<td>{{deposit.created_at | date:'yyyy-MM-dd HH:mm'}}</td>-->
+    <!--<td>-->
+      <!--<a href="{{deposit.blockchain_url}}" target='_blank'>{{deposit.txid}}</a>-->
+    <!--</td>-->
+    <!--<td>{{deposit.amount}}</td>-->
+    <!--<td>{{deposit.confirmations}}</td>-->
+    <!--<td>{{"funds.deposit_history." + deposit.aasm_state | t}}</td>-->
+  <!--</tr>-->
+  <!--<tr ng-show="dhCtrl.noDeposit()"><td colspan="6"><span class="help-block text-center">{{ "funds.deposit_history.no_data" | t }}</span></td></tr>-->
+<!--</table>-->
+
+<div class="crc-accordion">
+    <div class="crc-accordion__section">
+        <div class="crc-accordion__section-heading">
+            <!--<a href="#history1" title="History" class="fund-modal-title" ng-click="accountsCtrl.showHistoryContent();">-->
+            <a href="#history1" title="History" class="fund-modal-title">
+                History
+                <span class="crc-accordion__icon">
+                    <span class="fa fa-plus"></span>
+                    <span class="fa fa-minus"></span>
+                </span>
+            </a>
+        </div>
+        <div id="history1" class="crc-accordion__section-content fund-modal_history-content" style="display: block;">
+            <table class="crc-table crc-table--history" ng-controller="DepositHistoryController as dhCtrl">
+                <thead>
+                    <tr>
+                        <th>{{ "funds.deposit_history.time" | t }}</th>
+                        <th>{{ "funds.deposit_history.txid" | t }}</th>
+                        <th>{{ "funds.deposit_history.amount" | t }}</th>
+                        <th>{{ "funds.deposit_history.confirmations" | t }}</th>
+                        <th>{{ "funds.deposit_history.state_and_action" | t }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }" ng-repeat="deposit in dhCtrl.deposits | orderBy:predicate">
+                        <td>{{deposit.created_at | date:'yyyy-MM-dd HH:mm'}}</td>
+                        <td class="crc-status--success">
+                            <a href="{{deposit.blockchain_url}}" target='_blank'>{{deposit.txid}}</a>
+                        </td>
+                        <td>{{deposit.amount}}</td>
+                        <td>{{deposit.confirmations}}</td>
+                        <td>{{"funds.deposit_history." + deposit.aasm_state | t}}<span class="fa fa-spinner crc-status--emphasized"></span></td>
+                    </tr>
+                    <tr ng-show="dhCtrl.noDeposit()">
+                        <td colspan="6" style="text-align: center;">
+                            <span class="fund-modal-history-no-data">{{ "funds.deposit_history.no_data" | t }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

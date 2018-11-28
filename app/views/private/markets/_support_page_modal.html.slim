@@ -1,0 +1,101 @@
+.crc-popup__overlay.js-help-popup.js-toggle-help-popup
+.crc-popup.js-help-popup.crc-popup--help
+  .crc-popup__close
+    button.crc-button.crc-button--transparent.js-toggle-help-popup type=""
+      span.crc-button__icon
+        span.fa.fa-close
+  .crc-popup__heading
+    | Help
+  .crc-popup__content
+    .category-block.clearfix
+      .category-item.selected
+        .body
+          label.title My tickets
+          label.description
+            span.number 2
+            span Active
+      .category-item
+        .body
+          label.title Crycen tutorials
+          label.description
+            span.number 29
+            span Articles
+      .category-item
+        .body
+          label.title Knowledge Base
+          label.description
+            span.number 48
+            span Articles
+      .category-item
+        .body
+          label.title News
+          label.description
+            span.number 29
+            span Articles
+    .support-alert.alert.alert-dismissable.alert-info
+      button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
+      p
+        i.fa.fa-info-circle
+        span
+    .select-option-block.clearfix
+      .checkbox.checkbox-success.checkbox-inline
+        input#select-option-all type= "checkbox" value="all" name="filter[]" checked="checked"
+        label for="select-option-all" ALL
+      .checkbox.checkbox-success.checkbox-inline
+        input#select-option-open type= "checkbox" value="open" name="filter[]"
+        label for="select-option-open" OPEN TICKETS
+      .checkbox.checkbox-success.checkbox-inline
+        input#select-option-closed type= "checkbox" value="pending" name="filter[]"
+        label for="select-option-closed" CLOSED TICKETS
+
+      label.custom-btn.add-ticket-btn.pull-right
+        span.icon.fa.fa-life-saver
+        span.text Add New Ticket
+
+    .ticket-list-block
+      .header-row.clearfix
+        .ticket-id-col Ticket ID
+        .ticket-subject-col Subject
+        .ticket-status-col Status
+        .ticket-date-col Created - last update
+        .ticket-collapse-icon-col
+      .ticket-block-list
+        /.ticket-block
+        /  .ticket-row.clearfix
+        /    .ticket-id-col 0145
+        /    .ticket-subject-col New ticket title
+        /    .ticket-status-col.status-open OPEN
+        /    .ticket-date-col Oct 10, 2016 - Oct 14, 2016
+        /    .ticket-collapse-icon-col
+        /      span.fa.fa-plus
+        /      span.fa.fa-minus
+        /  .comments-block.clearfix
+        /    .comment-block.clearfix
+        /      .comment-author ME:
+        /      .comment-body
+        /        |More details More details More details More details More details More
+        /        |details More details More details More details More details More details
+        /        |More details More details More details More details More details
+        /      .comment-date
+        /        span.fa.fa-clock-o
+        /        |2 minutes
+        /    .comment-create-block
+        /      .comment-textarea
+        /        textarea.comment-body placeholder="Type your message here...  (we will respond in less than 12 hours)"
+        /        .attachment
+        /          span.fa.fa-paperclip
+        /          span .jpg  .png  .gif  .pdf
+        /      .create-comment-btn-block
+        /        label.custom-btn.create-comment-btn.pull-right
+        /          span.icon.fa.fa-paper-plane
+        /          span.text Create comment
+    .new-ticket-block
+      .description
+        |If you have any problems, start a new discussion so that our
+        |staff can help you out as soon as possible. All discussions are private between you and the support staff.
+      .new-ticket-form
+        input.title type="text" placeholder="Title"
+        textarea.detail placeholder="More details"
+        .button-group.clearfix
+          label.submit-btn.pull-right Submit
+          label.cancel-btn.pull-right Cancel

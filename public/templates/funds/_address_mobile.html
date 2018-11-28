@@ -1,0 +1,7 @@
+
+<div class="deposit-code-group clearfix">
+    <button type="button" class="btn-refresh" id="new_address" ng-click="genAddress(deposit_channel.resource_name); $event.preventDefault()"><i class="fa fa-undo"></i></button>
+    <input class="text-code" value="{{account.deposit_address}}" />
+
+</div>
+<button type="button" class="btn-file" data-clipboard-text="{{account.deposit_address}}"><i class="fa fa-files-o"></i></button>

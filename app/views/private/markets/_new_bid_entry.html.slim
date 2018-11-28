@@ -1,0 +1,64 @@
+#bid_entry.crc-buy-sell__coll
+  .crc-buy-sell__block.crc-buy-sell__block--danger
+    = form_for [market, order], :remote => true do |f|
+      = f.hidden_field :ord_type
+      .crc-buy-sell__top
+        #bid_ticker.crc-price
+          .crc-price__heading
+            = t('private.markets.ticker.bid')
+          .crc-price__amount.crc-status--danger.ask_price
+          .crc-price__currency BTC
+          .crc-price__other-currency
+            .crc-dollar.crc-dollar--xl
+              span> ?
+              span.ask_price-dollar
+      .crc-buy-sell__fields
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askPrice"
+              = t('private.markets.bid_entry.price')
+          .crc-form__element
+            /input.crc-form__control placeholder="0.10782951" value="" /
+            span.label.label-danger.hint-price-disadvantage
+            = f.text_field :price, class: 'crc-form__control'
+          .crc-form__currency
+            = t(market.bid['currency'], scope: 'market.currency')
+          /.crc-form__currency-explanation
+          /  .crc-dollar
+          /    span> ?
+          /    | 0.79USD
+        .crc-form__field.crc-form__field--buy-sell
+          .crc-form__label
+            label for="askAmount"
+              = t('private.markets.bid_entry.amount')
+          .crc-form__element
+            /input.crc-form__control placeholder="0.10782951" value="" /
+            span.label.label-info.hint-positions
+            = f.text_field :origin_volume, class: 'crc-form__control'
+          .crc-form__currency
+            = t(market.ask['currency'], scope: 'market.currency')
+          /.crc-form__currency-explanation
+          /  .crc-dollar
+          /    span> ?
+          /    | 0.79USD
+      .crc-buy-sell__amount
+        table.crc-table.crc-table--coll-3.crc-table--buy-sell
+          tbody
+            tr
+              td
+                | Price in USD:
+                span.ask_section_price
+              td
+                = t('private.markets.bid_entry.total')
+                | :
+                span
+                  = f.text_field :total, class: 'crc-form__control', :readonly => true
+              /td
+              /  | Total in USD:
+              /  span 56.210
+        = render partial: 'balance', locals: {currency: t(market.bid['currency'], scope: 'market.currency'), kind: 'ask'}
+      .crc-buy-sell__submit
+        button.crc-button.crc-button--danger type="submit"
+          span.crc-button__text
+            /= t('.action', currency: t(market.ask['currency'], scope: 'market.currency'))
+          span.crc-button__text = t('private.history.account.sell')

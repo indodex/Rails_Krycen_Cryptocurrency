@@ -1,0 +1,48 @@
+#kline_chart {
+  .panel-body { padding: 0; }
+}
+.navbar.static {
+  background: rgba(0,0,0,0.29);
+  .navbar-brand {
+    margin: 20px 0px !important;
+    img {
+      height: 24px;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav > li {
+      margin: 24px 0 24px 40px;
+      > a {
+        padding: 0px;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: #ffffff !important;
+        &#top_nav_market i {
+          color: #286aa6;
+        }
+
+        &#top_nav_help i {
+          color: #179c17;
+        }
+
+        &#top_nav_blog i {
+          color: #b0b0b0;
+        }
+        &#top_nav_aboutus i {
+          color: #b0b0b0;
+        }
+      }
+
+      &.email {
+        margin: 24px 0 24px 92px;
+        color: #ffffff;
+        line-height: 1;
+      }
+      &#language {
+        margin: 24px 0 24px 28px;
+        color: #ffffff;
+        line-height: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.comment-block.clearfix
+  .comment-author = current_user_id==comment.author_id ? 'ME:' : 'ADMIN:'
+  .comment-body
+    = comment.body
+  .comment-date
+    span.fa.fa-clock-o
+    = time_ago_in_words(comment.created_at)

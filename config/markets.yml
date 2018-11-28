@@ -1,0 +1,179 @@
+#- id: cnybtc
+#  code: 3
+#  #name: CNY/BTC      # default name
+#  base_unit: cny
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 2}
+#  ask: {fee: 0, currency: cny, fixed: 4}
+#  sort_order: 1
+#  #visible: false     # default to true
+
+- id: ltcbtc
+  code: 4
+  #name: LTC/BTC      # default name
+  base_unit: ltc
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: ltc, fixed: 4}
+  sort_order: 2
+
+- id: octbtc
+  code: 5
+  #name: OCT/BTC      # default name
+  base_unit: oct
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: oct, fixed: 4}
+  sort_order: 3
+
+- id: dogebtc
+  code: 6
+  #name: DOGE/BTC      # default name
+  base_unit: doge
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: doge, fixed: 4}
+  sort_order: 4
+
+- id: dshbtc
+  code: 7
+  #name: DSH/BTC      # default name
+  base_unit: dsh
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: dsh, fixed: 4}
+  sort_order: 5
+
+#- id: xrpbtc
+#  code: 8
+#  #name: XRP/BTC      # default name
+#  base_unit: xrp
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: xrp, fixed: 4}
+#  sort_order: 6
+
+#- id: ethbtc
+#  code: 9
+#  #name: ETH/BTC      # default name
+#  base_unit: eth
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: eth, fixed: 4}
+#  sort_order: 7
+
+#- id: btsbtc
+#  code: 10
+#  #name: BTS/BTC      # default name
+#  base_unit: bts
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: bts, fixed: 4}
+#  sort_order: 8
+
+#- id: usdtbtc
+#  code: 11
+#  #name: USDT/BTC      # default name
+#  base_unit: usdt
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: usdt, fixed: 4}
+#  sort_order: 9
+
+#- id: dashbtc
+#  code: 12
+#  #name: DASH/BTC      # default name
+#  base_unit: dash
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: dash, fixed: 4}
+#  sort_order: 10
+
+#- id: trmbbtc
+#  code: 13
+#  #name: TRMB/BTC      # default name
+#  base_unit: trmb
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: trmb, fixed: 4}
+#  sort_order: 11
+
+#- id: xmrbtc
+#  code: 14
+#  #name: XMR/BTC      # default name
+#  base_unit: xmr
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: xmr, fixed: 4}
+#  sort_order: 12
+
+- id: rbybtc
+  code: 15
+  #name: RBY/BTC      # default name
+  base_unit: rby
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: rby, fixed: 4}
+  sort_order: 13
+
+#- id: ybcbtc
+#  code: 16
+#  #name: YBC/BTC      # default name
+#  base_unit: ybc
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: ybc, fixed: 4}
+#  sort_order: 14
+
+#- id: xpmbtc
+#  code: 17
+#  #name: XPM/BTC      # default name
+#  base_unit: xpm
+#  quote_unit: btc
+#  #price_group_fixed: 1 # aggregate price levels in orderbook
+#  bid: {fee: 0, currency: btc, fixed: 4}
+#  ask: {fee: 0, currency: xpm, fixed: 4}
+#  sort_order: 14
+- id: gxcbtc
+  code: 18
+  #name: GXC/BTC      # default name
+  base_unit: gxc
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: gxc, fixed: 4}
+  sort_order: 16
+
+- id: ggcbtc
+  code: 19
+  #name: GGC/BTC      # default name
+  base_unit: ggc
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: ggc, fixed: 4}
+  sort_order: 17
+
+- id: oprbtc
+  code: 20
+  #name: OPR/BTC      # default name
+  base_unit: opr
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 4}
+  ask: {fee: 0, currency: opr, fixed: 4}
+  sort_order: 18

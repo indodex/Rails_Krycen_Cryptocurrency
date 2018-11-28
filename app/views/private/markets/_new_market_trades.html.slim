@@ -1,0 +1,62 @@
+/- if !current_user
+.crc-accordion__section-heading
+  a.crc-accordion__section-title href="#market_trades_wrapper" title=("Market history")
+    | Market Trades
+    span.crc-accordion__icon
+      span.fa.fa-plus
+      span.fa.fa-minus
+
+#market_trades_wrapper.crc-accordion__section-content
+  table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--market-history-2.crc-table--scroll-side
+    thead
+      tr
+        th.at #{t('.time')}
+        /th.my
+        th.price #{t('.price')}
+        th.volume #{t('.volume')}
+  .crc-overflow.crc-overflow--market-history-2
+    table.crc-table.crc-table--coll-3.crc-table--market-history-1.all-trades
+      tbody
+    table.crc-table.crc-table--coll-3.crc-table--market-history-1.my-trades
+      tbody
+/-else
+/  .crc-accordion__section-heading
+/    a.crc-accordion__section-title.crc-accordion__section-title--active href="#market_trades_wrapper" title=("Market history")
+/      | Market Trades
+/      span.crc-accordion__icon
+/        span.fa.fa-plus
+/        span.fa.fa-minus
+/
+/  #market_trades_wrapper.crc-accordion__section-content.crc-accordion__section-content--open
+/    table.crc-table.crc-table--coll-3.crc-table--market-history-1.crc-table--market-history-2.crc-table--scroll-side
+/      thead
+/        tr
+/          th.at #{t('.time')}
+/          /th.my
+/          th.price #{t('.price')}
+/          th.volume #{t('.volume')}
+/    .crc-overflow.crc-overflow--market-history-2
+/      table.crc-table.crc-table--coll-3.crc-table--market-history-1.all-trades
+/        tbody
+/      table.crc-table.crc-table--coll-3.crc-table--market-history-1.my-trades
+/        tbody
+
+/#market_trades_wrapper.has-right-dropdown.crc-accordion__section-content
+/  .dropdown-wrapper
+/    ul.dropdown-menu
+/      li: a.all.active href='#' = t('.all_html')
+/      li: a.my href='#' = t('.my_html')
+/  #market_trades
+/    .panel.panel-default
+/      .panel-body.panel-body-head
+/        table.table
+/          thead: tr
+/            th.at.col-xs-5.text-left #{t('.time')}
+/            th.my.col-xs-1.text-left
+/            th.price.col-xs-5.text-right #{t('.price')}
+/            th.volume.col-xs-5.text-right #{t('.volume')}
+/      .panel-body.panel-body-content
+/        table.table.table-hover.all-trades
+/          tbody
+/        table.table.table-hover.my-trades
+/          tbody

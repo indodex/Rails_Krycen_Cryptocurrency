@@ -1,0 +1,122 @@
+.crc-popup.js-deposit-popup
+  .crc-popup__close
+    button.crc-button.crc-button--transparent.js-toggle-deposit-popup type=""
+      span.crc-button__icon
+        span.fa.fa-close
+  .crc-popup__heading
+    | Deposit
+  .crc-popup__content
+    .crc-popup__form
+      .crc-form__explanation.crc-form__explanation--space-top Please copy and paste the address below into your wallet, enter the amount you want to deposit, then simply click conﬁrm, then send and your deposit will appear below ngInclude: undeﬁned
+      .crc-form__field.crc-form__field--code
+        .crc-form__element
+          button.crc-button.crc-button--md.crc-button--action-cancel
+            span.crc-button__icon
+              span.fa.fa-rotate-left
+        .crc-form__element
+          input.crc-form__control type="text" value="16wLyW7up7nNm4r1ZghHNb33ip8sx3" /
+        .crc-form__element
+          button.crc-button.crc-button--md.crc-button--secondary
+            span.crc-button__icon
+              span.fa.fa-copy
+            span.crc-button__text Copy
+      .crc-qrcode
+        .crc-qrcode__toggle
+          .crc-qrcode__icon.crc-qrcode__icon--right
+            span.fa.fa-angle-down
+          .crc-qrcode__icon.crc-qrcode__icon--left
+            span.fa.fa-qrcode
+          .crc-qrcode__text OPEN QRCODE
+        .crc-qrcode__code
+          img alt="qrcode" src="#{image_url('qrcode.jpg')}" /
+      .crc-form__explanation.crc-form__explanation--border-top Once you have completed the deposit transaction, you can check the status of your withdraws below
+    .crc-accordion
+      .crc-accordion__section
+        .crc-accordion__section-heading
+          a.crc-accordion__section-title href="#history1" title="History"
+            | History
+            span.crc-accordion__icon
+              span.fa.fa-plus
+              span.fa.fa-minus
+        #history1.crc-accordion__section-content
+          table.crc-table.crc-table--history
+            thead
+              tr
+                th Time
+                th Transaction ID
+                th Amount
+                th Conﬁrmations
+                th State/Action
+            tbody
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-spinner.crc-status--emphasized
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Rejected
+                  span.fa.fa-remove.crc-status--danger
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success
+              tr
+                td
+                  | 2016-03-22 13:00
+                td.crc-status--success 5bfe5e65cdfc5
+                td 0.01
+                td 6
+                td
+                  | Pending
+                  span.fa.fa-check.crc-status--success

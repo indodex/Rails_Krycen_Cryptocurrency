@@ -1,0 +1,19 @@
+.crc-popup__overlay.js-toggle-password-popup
+.crc-popup
+  .crc-popup__close
+    button.crc-button.crc-button--transparent.js-toggle-password-popup[type=""]
+      span.crc-button__icon
+        span.fa.fa-close
+  .crc-popup__heading
+    | Fund
+  .crc-popup__content
+    .crc-popup__form
+      .container
+        .row
+          .col-xs-8
+            .currencies-container
+              accounts
+          .col-xs-16
+            .details-container
+              /! {{template 'flash'}}
+              ui-view

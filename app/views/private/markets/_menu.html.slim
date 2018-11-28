@@ -1,0 +1,129 @@
+.crc-page-right__item
+  .crc-user
+    .crc-logged-user
+      = current_user.email
+    #languageSwitcher.crc-language-section
+      = render partial: 'new_language'
+.crc-page-right__item.crc-page-right__item--controls
+  .crc-controls
+    .crc-controls__item
+      input#soundControl[type="checkbox" name="sound-checkbox"]
+      label[for="soundControl"]
+        | Sound
+    .crc-controls__item
+      input#notificationControl[type="checkbox" name="notification-checkbox"]
+      label[for="notificationControl"]
+        | Notiﬁcation
+.crc-page-right__item.crc-page-right__item--side-navigation
+  #accordion-menu.panel-group.crc-side-navigation__items
+    .panel.panel-default
+      .panel-heading.crc-side-navigation__item
+        a.crc-side-navigation__link.collapsed[data-toggle="collapse" data-parent="#accordion-menu" href="#setting-menu"]
+          span.crc-side-navigation__link-icon
+            span.fa.fa-user
+          = t('.settings.title')
+      #setting-menu.crc-side-navigation__sub-items.panel-collapse.collapse
+        .panel-body
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.fa.fa-envelope-square
+            span.crc-side-navigation__sub-item-text
+              = t('.email.title')
+            span.crc-side-navigation__sub-item-status
+              - if current_user.activated?
+                span.fa.fa-check
+              - else
+                = link_to t('.email.resend'), new_activation_path, class: 'crc-side-navigation__sub-item-action'
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.fa.fa-phone-square
+            span.crc-side-navigation__sub-item-text
+              | Phone number
+            span.crc-side-navigation__sub-item-status
+              - if current_user.sms_two_factor.activated?
+                span.fa.fa-check
+              - else
+                = link_to t('.phone_number.go'), verify_sms_auth_path, class: 'crc-side-navigation__sub-item-action'
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.fa.fa-qrcode
+            span.crc-side-navigation__sub-item-text
+              = t('.two_factor_auth.title')
+            - if current_user.app_two_factor.activated?
+              = link_to t('.two_factor_auth.disable'), edit_verify_google_auth_path, class: 'crc-side-navigation__sub-item-action'
+              /span.fa.fa-angle-right
+            - else
+              = link_to t('.two_factor_auth.enable'), verify_google_auth_path, class: 'crc-side-navigation__sub-item-action'
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.fa.fa-key
+            span.crc-side-navigation__sub-item-text
+              = t('.passwords.title')
+            span.crc-side-navigation__sub-item-action.js-toggle-password-popup.cursor-pointer
+              =t('.passwords.go')
+                span.fa.fa-angle-right
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.fa.fa-code
+            span.crc-side-navigation__sub-item-text
+              = t('.api_tokens.title')
+            = link_to t('.api_tokens.go'), api_tokens_path, class: 'crc-side-navigation__sub-item-action'
+              /span.fa.fa-angle-right
+    .panel.panel-default
+      .panel-heading.crc-side-navigation__item
+        a.crc-side-navigation__link.js-toggle-help-popup.collapsed[data-toggle="collapse" data-parent="#accordion-menu" href="#help-menu"]
+          span.crc-side-navigation__link-icon
+            span.fa.fa-life-saver
+          = t('.help.title')
+
+    .panel.panel-default
+      .panel-heading.crc-side-navigation__item
+        a.crc-side-navigation__link.collapsed[data-toggle="collapse" data-parent="#accordion-menu" href="#tutorial-menu"]
+          span.crc-side-navigation__link-icon
+            span.fa.fa-mortar-board
+          = t('.tutorial.title')
+      #tutorial-menu.crc-side-navigation__sub-items.panel-collapse.collapse
+        .panel-body
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.crc-status--success.fa.fa-file-movie-o
+            a.crc-side-navigation__sub-item-link.js-toggle-video-popup[href="#" title="How to withdraw"]
+              span.crc-side-navigation__sub-item-text
+                | How to withdraw
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.crc-status--success.fa.fa-file-movie-o
+            a.crc-side-navigation__sub-item-link.js-toggle-video-popup[href="#" title="How to deposit"]
+              span.crc-side-navigation__sub-item-text
+                | How to deposit
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.crc-status--success.fa.fa-file-movie-o
+            a.crc-side-navigation__sub-item-link.js-toggle-video-popup[href="#" title="How to use graphs"]
+              span.crc-side-navigation__sub-item-text
+                | How to use graphs
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.crc-status--success.fa.fa-file-movie-o
+            a.crc-side-navigation__sub-item-link.js-toggle-video-popup[href="#" title="Getting started with CRY CEN"]
+              span.crc-side-navigation__sub-item-text
+                | Getting started with CRY CEN
+          .crc-side-navigation__sub-item
+            span.crc-side-navigation__sub-item-icon
+              span.crc-status--success.fa.fa-file-movie-o
+            a.crc-side-navigation__sub-item-link.js-toggle-video-popup[href="#" title="Best strategies"]
+              span.crc-side-navigation__sub-item-text
+                | Best strategies
+    - if is_admin?
+      .panel.panel-default
+        .panel-heading.crc-side-navigation__item
+          a.crc-side-navigation__link.collapsed[ data-parent="#accordion-menu" href= admin_dashboard_path]
+            span.crc-side-navigation__link-icon
+              span.fa.fa-dashboard
+            = t('.admin.title')
+    .panel.panel-default
+      .panel-heading.crc-side-navigation__item
+        a.crc-side-navigation__link.collapsed[ data-parent="#accordion-menu" href= signout_path]
+          span.crc-side-navigation__link-icon
+            span.fa.fa-sign-out
+          = t('.signout.title')

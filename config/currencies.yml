@@ -1,0 +1,265 @@
+#- id: 1
+#  key: renminbi
+#  code: cny
+#  symbol: "¥"
+#  coin: false
+#  precision: 2
+#  assets:
+#    accounts:
+#      -
+#        bank: '招商银行'
+#        address: '6225 0885 6022 3501'
+#        password: '111111'
+#        tel: '95555'
+- id: 2
+  key: satoshi
+  code: btc
+  symbol: "฿"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://ExchangeRPCUser:iiojouuHYUBybyiB14161h86df4heh18a3ee684j68tj4t16jts16@127.0.0.1:8345
+  blockchain: https://blockchain.info/tx/#{txid}
+  address_url: https://blockchain.info/address/#{address}
+  assets:
+    accounts:
+      -
+        address: 1LSWntcKEeavytU7nSTjdnXa2gqZx8F7F4
+
+- id: 3
+  key: octacoin
+  code: oct
+  symbol: "OCT"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://ExchangeRPCUser:iiojouuHYUBybyiB14161h86df4heh18a3ee684j68tj4t16jts16@127.0.0.1:4225
+  blockchain: http://octacoin.net/?request=transaction&hash={txid}
+  address_url: http://octacoin.net/
+  assets:
+    accounts:
+      -
+        bank: 'Octacoin bank'
+
+- id: 4
+  key: litecoin
+  code: ltc
+  symbol: "Ł"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://ExchangeRPCUser:iiojouuHYUBybyiB14161h86df4heh18a3ee684j68tj4t16jts16@127.0.0.1:9335
+  blockchain: https://block-explorer.com/tx/#{txid}
+  address_url: https://block-explorer.com/address/#{address}
+  assets:
+    accounts:
+      -
+        address: LPkxsW2LWmbUj9UMY9W6ocwEzbEkJhpvEc
+
+- id: 5
+  key: dogecoin
+  code: doge
+  symbol: "Ð"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://dogecoinrpc:9nrdL6GVForGEvhtXpyQ9c9Px869oQ6Xcs6imdZSP7GX@127.0.0.1:4325
+  blockchain: http://dogecoin.com/?request=transaction&hash={txid}
+  address_url: http://dogecoin.com/
+  assets:
+    accounts:
+      -
+        bank: 'Dogecoin bank'
+
+- id: 6
+  key: dashcoin
+  code: dsh
+  symbol: "DSH"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://dashrpc:D649cPj7gSq7jsULYQUFKTUSJAFe8ojGvH4KXz7yJ6EL@127.0.0.1:4425
+  blockchain: http://dashcoin.net//?request=transaction&hash={txid}
+  address_url: http://dashcoin.net/
+  assets:
+    accounts:
+      -
+        bank: 'Dashcoin bank'
+
+#- id: 7
+#  key: ripple
+#  code: xrp
+#  symbol: "XRP"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:4525
+#  blockchain: http://ripple.com/?request=transaction&hash={txid}
+#  address_url: http://ripple.com/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'Ripple bank'
+
+#- id: 8
+#  key: ethereum
+#  code: eth
+#  symbol: "ETH"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:4625
+#  blockchain: http://ethereum.org/?request=transaction&hash={txid}
+#  address_url: http://ethereum.org/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'Ethereum bank'
+
+#- id: 9
+#  key: bitsharesx
+#  code: bts
+#  symbol: "BTS"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:4725
+#  blockchain: http://bitshares.org/?request=transaction&hash={txid}
+#  address_url: http://bitshares.org/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'BitShares bank'
+
+#- id: 10
+#  key: tether
+#  code: usdt
+#  symbol: "USDT"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:4825
+#  blockchain: http://tether.to/?request=transaction&hash={txid}
+#  address_url: http://tether.to/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'Tether bank'
+
+#- id: 11
+#  key: dash
+#  code: dash
+#  symbol: "DASH"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:4925
+#  blockchain: https://blockchain.info/tx/#{txid}
+#  address_url: https://blockchain.info/address/#{address}
+#  assets:
+#    accounts:
+#      -
+#        address: 1LSWntcKEeavytU7nSTjdnXa2gqZx8F7F4
+
+#- id: 12
+#  key: trmb
+#  code: trmb
+#  symbol: "TRMB"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:5025
+#  blockchain: https://blockchain.info/tx/#{txid}
+#  address_url: https://blockchain.info/address/#{address}
+#  assets:
+#    accounts:
+#      -
+#        address: 1LSWntcKEeavytU7nSTjdnXa2gqZx8F7F4
+
+#- id: 13
+#  key: monero
+#  code: xmr
+#  symbol: "ɱ"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:5125
+#  blockchain: http://getmonero.org/?request=transaction&hash={txid}
+#  address_url: http://getmonero.org/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'Monero bank'
+
+- id: 14
+  key: rubycoin
+  code: rby
+  symbol: "RBY"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://rubycoinrpc:4Rt1ZormjPzJRi8KFy3BoQjvGUTg4dAwaK3zbp4HzY2h@127.0.0.1:5225
+  blockchain: http://rubycoin.org/?request=transaction&hash={txid}
+  address_url: http://rubycoin.org/
+  assets:
+    accounts:
+      -
+        bank: 'Rubycoin bank'
+
+#- id: 15
+#  key: ybcoin
+#  code: ybc
+#  symbol: "YBC"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:5325
+#  blockchain: http://ybcoin.com/?request=transaction&hash={txid}
+#  address_url: http://ybcoin.com/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'YBcoin bank'
+
+#- id: 16
+#  key: primecoin
+#  code: xpm
+#  symbol: "XPM"
+#  coin: true
+#  quick_withdraw_max: 1000
+#  rpc: http://Testinis:Testukas@127.0.0.1:5325
+#  blockchain: http://primecoin.io/?request=transaction&hash={txid}
+#  address_url: http://primecoin.io/
+#  assets:
+#    accounts:
+#      -
+#        bank: 'Primecoin bank'
+
+
+- id: 17
+  key: gxcoin
+  code: gxc
+  symbol: "GXC"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://Testinis:Testukas@127.0.0.1:8882
+  blockchain: http://gxcoin.com/?request=transaction&hash={txid}
+  address_url: http://gxcoin.com/
+  assets:
+    accounts:
+      -
+        bank: 'Gxcoin bank'
+
+- id: 18
+  key: ggcoin
+  code: ggc
+  symbol: "GGC"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://Testinis:Testukas@127.0.0.1:8888
+  blockchain: http://ggcoin.com/?request=transaction&hash={txid}
+  address_url: http://ggcoin.com/
+  assets:
+    accounts:
+      -
+        bank: 'Ggcoin bank'
+
+- id: 19
+  key: oprcoin
+  code: opr
+  symbol: "OPR"
+  coin: true
+  quick_withdraw_max: 1000
+  rpc: http://Testinis:Testukas@127.0.0.1:15627
+  blockchain: http://oprcoin.com/?request=transaction&hash={txid}
+  address_url: http://oprcoin.com/
+  assets:
+    accounts:
+      -
+        bank: 'Oprcoin bank'

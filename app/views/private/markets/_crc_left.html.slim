@@ -1,0 +1,35 @@
+#market_list_wrapper.crc-layout__left
+  .crc-logo
+    a href=root_path title=("CRY CEN")
+      img alt=("CRY CEN") srcset="/cry-cen.png" /
+  .crc-market-aside
+    .crc-market-aside__heading = @market.name + " Market Info"
+    .crc-market-aside__stats
+      dl.crc-stats
+        dt Scrypt
+        dt Scrypt
+        dd Doge scrypt
+        dt Website
+        dd
+          a href=".com" title="www.coinmarket.com"  www.coinmarket.com
+        dt Blockchain explore
+        dd 1330
+        dt Marketcap
+        dd 15,239,000 DOGE
+  #market_list.crc-market_list
+    table.crc-table.crc-table--coll-3.crc-table--market-aside
+      thead
+        tr
+          th = t('private.markets.market_list.all')
+          th = t('private.markets.market_list.price')
+          th = t('private.markets.market_list.change')
+            |%
+      tbody
+        - @markets.each do |market|
+          tr id="market-list-#{market.id}" class="quote-#{market.quote_unit}" data-market=market.id
+            td.col-xs-4.name
+              = link_to market.name, market_path(market)
+            td.col-xs-15.price
+              = Global[market.id].ticker[:last]
+            td.col-xs-5.change
+              | +0.00%

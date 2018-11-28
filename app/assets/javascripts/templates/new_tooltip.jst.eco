@@ -1,0 +1,62 @@
+<div class="crc-chart__statistics">
+    <div class="crc-statistics__items">
+        <div class="crc-statistics__time">
+            <%= @title %>
+        </div>
+        <div class="crc-statistics__item">
+            <%= gon.i18n.chart.open %>:
+            <span class="crc-status--marked">
+            <%= @format @points.candlestick.open, gon.market.bid.fixed %>
+            </span>
+            <div class="crc-status--emphasized">
+                <% if @indicator['EMA']: %>
+                <%= @points.ema7.series.name %>: <%= @format @points.ema7.y, gon.market.bid.fixed %>
+                <% end %>
+                <% if @indicator['MA']: %>
+                    <%= @points.ma5.series.name %>: <%= @format @points.ma5.y, gon.market.bid.fixed %>
+                <% end %>
+            </div>
+        </div>
+        <div class="crc-statistics__item">
+            <%= gon.i18n.chart.close %>:
+            <span class="crc-status--marked">
+                <%= @format @points.candlestick.close, gon.market.bid.fixed %>
+            </span>
+            <div class="crc-status--warning">
+                <% if @indicator['EMA']: %>
+                <%= @points.ema30.series.name %>: <%= @format @points.ema30.y, gon.market.bid.fixed %>
+                <% end %>
+                <% if @indicator['MA']: %>
+                    <%= @points.ma10.series.name %>: <%= @format @points.ma10.y, gon.market.bid.fixed %>
+                <% end %>
+            </div>
+        </div>
+        <div class="crc-statistics__item">
+            <%= gon.i18n.chart.high %>:
+            <span class="crc-status--marked">
+                <%= @format @points.candlestick.high, gon.market.bid.fixed %>
+            </span>
+            <div class="crc-status--emphasized">
+                <%= @points.macd.series.name %>: <%= @format @points.macd.y %>
+            </div>
+        </div>
+        <div class="crc-statistics__item">
+            <%= gon.i18n.chart.low %>:
+            <span class="crc-status--marked">
+                <%= @format @points.candlestick.low, gon.market.bid.fixed %>
+            </span>
+            <div class="crc-status--warning">
+                <%= @points.sig.series.name %>: <%= @format @points.sig.y %>
+            </div>
+        </div>
+        <div class="crc-statistics__item">
+            <%= gon.i18n.chart.volume %>:
+            <span class="crc-status--marked">
+                <%= @format @points.volume.y, gon.market.ask.fixed %>
+            </span>
+            <div class="crc-status--danger">
+                <%= @points.hist.series.name %>: <%= @format @points.hist.y %>
+            </div>
+        </div>
+    </div>
+</div>
